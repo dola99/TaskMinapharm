@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:minapharm_task/feature/auth/Presentaion/View/componets/login_form.dart';
 import 'package:minapharm_task/feature/auth/Presentaion/View/componets/signup_form.dart';
 
 class SignupScreen extends StatelessWidget {

@@ -35,7 +35,6 @@ class AuthRepoImb extends AuthRepo {
     } on ThisUserIsRegestiredBeforeException {
       return Left(ThisUserIsRegestiredBeforeFailure());
     } catch (e) {
-      print(e);
       throw UnimplementedError();
     }
   }
