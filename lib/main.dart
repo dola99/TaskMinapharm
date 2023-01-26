@@ -6,6 +6,7 @@ import 'package:minapharm_task/core/local_db/hive.dart';
 import 'package:minapharm_task/core/shared_pref_singleton.dart';
 import 'package:minapharm_task/feature/auth/Presentaion/Cubit/login_cubit.dart';
 import 'package:minapharm_task/feature/auth/Presentaion/View/login_view.dart';
+import 'package:minapharm_task/feature/home/Movie/Presentaion/cubit/movie_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,6 +25,9 @@ class StartPoint extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => db.locator<AuthCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => db.locator<MoviesCubit>(),
         ),
       ],
       child: ScreenUtilInit(

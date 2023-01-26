@@ -15,12 +15,14 @@ class AuthCubit extends Cubit<AuthState> {
   late List<User> allUsers;
 
   Future<void> login(String userName, String password) async {
+    emit(LoadingState());
     var result = await loginUseCase(userName, password);
     result.fold((failure) => emit(LoginFailed(failureMap[failure]!.errorMsg)),
         (sucesss) => emit(LoginSuccesfully()));
   }
 
   Future<void> signup(String userName, String password) async {
+    emit(LoadingState());
     var result = await signupUseCase(userName, password);
     result.fold((failure) => emit(SignupFailed(failureMap[failure]!.errorMsg)),
         (sucesss) => emit(SignupSuccesfully()));

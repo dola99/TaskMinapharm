@@ -54,7 +54,7 @@ class CustomTextField extends StatelessWidget {
     return TextFormField(
       controller: textEditingController,
       obscureText: isObscure,
-      style: style,
+      style: TextStyle(color: Colors.black),
       initialValue: intialValue,
       onChanged: onChanged,
       onTap: onTap,

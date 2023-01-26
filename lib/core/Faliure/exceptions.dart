@@ -15,3 +15,5 @@ class ThisUserIsRegestiredBeforeException implements Exception {}
 class ThisUserNotFoundInDBException implements Exception {}
 
 class WrongPasswordOrUserNameException implements Exception {}
+
+class EmptyCacheException implements Exception {}

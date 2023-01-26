@@ -98,7 +98,6 @@ class LoginForm extends StatelessWidget {
             color: _focusNodes[1].hasFocus
                 ? Theme.of(context).colorScheme.secondary
                 : Theme.of(context).colorScheme.shadow,
-            fontFamily: 'oswald',
             fontWeight: FontWeight.w400,
             fontSize: 18,
           ),

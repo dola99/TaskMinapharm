@@ -31,6 +31,7 @@ dependencies:
   equatable: ^2.0.5
   progress_state_button: ^1.0.4
   shared_preferences: ^2.0.17
+  internet_connection_checker: ^1.0.0+1
 
 dev_dependencies:
   flutter_test:

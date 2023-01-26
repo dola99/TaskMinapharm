@@ -20,14 +20,20 @@ class LoginScreen extends StatelessWidget {
             ),
             Text(
               'MinaPharm',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.sp,
+                  color: Colors.black),
             ),
             SizedBox(
               height: 50.h,
             ),
             Text(
               'Login',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.sp),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.sp,
+                  color: Colors.black),
             ),
             SizedBox(
               height: 25.h,

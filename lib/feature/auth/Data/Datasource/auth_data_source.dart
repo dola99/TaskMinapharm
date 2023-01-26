@@ -16,7 +16,7 @@ class AuthDataSourceImb extends AuthDataSource {
   @override
   Future<AuthResponse> login(String userName, String password) async {
     if (localDb.listOfUsers.isEmpty) {
-      await localDb.getAll();
+      await localDb.getAllUsers();
     }
     var result = localDb.listOfUsers.firstWhere(
       (element) => element.userName == userName,
@@ -38,7 +38,7 @@ class AuthDataSourceImb extends AuthDataSource {
   @override
   Future<AuthResponse> signup(String userName, String password) async {
     if (localDb.listOfUsers.isEmpty) {
-      await localDb.getAll();
+      await localDb.getAllUsers();
     }
     log(localDb.listOfUsers.toList().toString());
     var result = localDb.listOfUsers.firstWhere(
@@ -47,7 +47,7 @@ class AuthDataSourceImb extends AuthDataSource {
     );
 
     if (result == User(userName: '', password: '')) {
-      await localDb.insertAll(
+      await localDb.insertUser(
           User(userName: 'dola', password: '1234'), LocalDbNames.userDb);
       return AuthResponse(
           isSucess: true, userName: userName, password: password);

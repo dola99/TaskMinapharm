@@ -32,6 +32,11 @@ class WrongPasswordOrUserNameFailure extends Failure {
   List<Object?> get props => [];
 }
 
+class EmptyCacheFailure extends Failure {
+  @override
+  List<Object?> get props => [];
+}
+
 class ApiFailure extends Failure {
   final String errorMsg;
   ApiFailure({
@@ -56,6 +61,7 @@ Map<Failure, ErrorComponets> failureMap = {
       ErrorComponets(errorMsg: 'This User is Not Fount In DB '),
   WrongPasswordOrUserNameFailure():
       ErrorComponets(errorMsg: 'Wrong passord Or Username'),
+  EmptyCacheFailure(): ErrorComponets(errorMsg: 'No Data Found')
 };
 
 class ErrorComponets {
