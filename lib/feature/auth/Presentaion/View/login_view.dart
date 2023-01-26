@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:minapharm_task/core/local_db/hive.dart';
 import 'package:minapharm_task/core/route/navigation.dart';
-import 'package:minapharm_task/feature/auth/Login/Presentaion/Cubit/login_cubit.dart';
-import 'package:minapharm_task/feature/auth/Login/Presentaion/View/componets/login_form.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:minapharm_task/feature/auth/Signup/Presentaion/view/signup_screen.dart';
-import 'package:progress_state_button/iconed_button.dart';
-import 'package:progress_state_button/progress_button.dart';
+import 'package:minapharm_task/feature/auth/Presentaion/View/componets/login_form.dart';
+import 'package:minapharm_task/feature/auth/Presentaion/View/signup_view.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -45,7 +41,7 @@ class LoginScreen extends StatelessWidget {
             ),
             InkWell(
               onTap: () => CustomFunctions.pushScreen(
-                  widget: const SignUpScreen(), context: context),
+                  widget: const SignupScreen(), context: context),
               child: Text(
                 'SignUp',
                 style: TextStyle(
@@ -54,28 +50,6 @@ class LoginScreen extends StatelessWidget {
                     fontSize: 16.sp),
               ),
             ),
-            SizedBox(
-              height: 25.h,
-            ),
-            ProgressButton.icon(iconedButtons: {
-              ButtonState.idle: IconedButton(
-                  text: "Login",
-                  icon: const Icon(Icons.send, color: Colors.white),
-                  color: Colors.black),
-              ButtonState.loading: IconedButton(
-                  text: "Loading", color: Colors.deepPurple.shade700),
-              ButtonState.fail: IconedButton(
-                  text: "Failed",
-                  icon: const Icon(Icons.cancel, color: Colors.white),
-                  color: Colors.red.shade300),
-              ButtonState.success: IconedButton(
-                  text: "Success",
-                  icon: const Icon(
-                    Icons.check_circle,
-                    color: Colors.white,
-                  ),
-                  color: Colors.green.shade400)
-            }, onPressed: () {}, state: ButtonState.idle)
           ],
         ),
       ),

@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:minapharm_task/feature/auth/Login/Domain/Entity/user.dart';
+import 'package:minapharm_task/feature/auth/Domain/Entity/user.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
 
 class LocalDbNames {
@@ -9,7 +9,7 @@ class LocalDbNames {
 
 class LocalDb {
   late Box<User> allUsers;
-  late Iterable<User> listOfUsers;
+  Iterable<User> listOfUsers = [];
 
   Future<void> initOfLocalStorge() async {
     Directory directory =

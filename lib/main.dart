@@ -3,13 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:minapharm_task/core/injection/injection.dart' as db;
 import 'package:minapharm_task/core/local_db/hive.dart';
-import 'package:minapharm_task/feature/auth/Login/Presentaion/Cubit/login_cubit.dart';
-import 'package:minapharm_task/feature/auth/Login/Presentaion/View/login_view.dart';
+import 'package:minapharm_task/core/shared_pref_singleton.dart';
+import 'package:minapharm_task/feature/auth/Presentaion/Cubit/login_cubit.dart';
+import 'package:minapharm_task/feature/auth/Presentaion/View/login_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await db.init();
   await db.locator<LocalDb>().initOfLocalStorge();
+  await Prefs.init();
   runApp(const StartPoint());
 }
 
@@ -21,7 +23,7 @@ class StartPoint extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => db.locator<LoginCubit>(),
+          create: (context) => db.locator<AuthCubit>(),
         ),
       ],
       child: ScreenUtilInit(
