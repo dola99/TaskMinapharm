@@ -10,7 +10,7 @@ class User extends Equatable {
   @HiveField(1)
   late final String password;
 
-  User({required this.userName, required this.password});
+  const User({required this.userName, required this.password});
 
   factory User.fromJson(String source) => User.fromMap(json.decode(source));
 

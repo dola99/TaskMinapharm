@@ -54,7 +54,7 @@ class CustomTextField extends StatelessWidget {
     return TextFormField(
       controller: textEditingController,
       obscureText: isObscure,
-      style: TextStyle(color: Colors.black),
+      style: const TextStyle(color: Colors.black),
       initialValue: intialValue,
       onChanged: onChanged,
       onTap: onTap,
@@ -99,7 +99,7 @@ class CustomTextField extends StatelessWidget {
         ),
         disabledBorder: disabledBorder,
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Colors.grey,
           ),
           borderRadius: BorderRadius.circular(15),

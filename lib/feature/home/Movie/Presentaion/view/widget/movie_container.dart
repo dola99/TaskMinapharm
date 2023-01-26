@@ -22,7 +22,7 @@ class MoviesContainer extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Container(
+                  SizedBox(
                     width: 150.w,
                     height: 150.w,
                     child: Image.network(
